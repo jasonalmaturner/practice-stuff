@@ -1,8 +1,10 @@
 var reverseArray = function(str){
 	var newArr = str.split('');
 	var reverseArray = [];
-	for(var i = 0; i < newArr.length; i++;){
-		reverseArray.push[newArr.length - 1];
-	}
-	reverseArray.join('');
+	for(var i = 0; i < newArr.length; i++){
+        reverseArray.unshift(newArr[i]);
+	};
+	return reverseArray.join('');
 }
+var myName = 'Jason Alma Turner';
+alert(reverseArray(myName));
