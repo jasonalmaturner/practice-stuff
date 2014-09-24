@@ -28,3 +28,17 @@ var factorial =  function(x){
 }
 alert(factorial(5));*/
 //This above function needs tweeked to work
+
+var SimpleSymbols = function(str){
+    var re = /\+\w\+/i;
+    var test = true;
+    if (str.search(re) === -1){
+        test = false;
+    }
+    return test;
+};
+
+z = "+d+++====+==+D+==";
+alert(SimpleSymbols(z));
+
+//This function returns if any +"letter"+ is true. I need it to return if any letter is not surrounded by +
