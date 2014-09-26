@@ -42,3 +42,25 @@ z = "+d+++====+==+D+==";
 alert(SimpleSymbols(z));
 
 //This function returns if any +"letter"+ is true. I need it to return if any letter is not surrounded by +
+
+// var firstNonRepeatedCharacter = function(x){
+//     var stringArray = x.split('');
+//     for(var i = 0; i < stringArray.length; i++){
+//         var repeatedIndices = [];
+//         var nonRepeatedIndices = [];
+//         var idx = stringArray.indexOf(i);
+//         while (
+//     
+
+var prime = function (num) {
+    debugger;
+    var result = true;
+    for (var i = 2; i < num; i++) {
+        if (num % i === 0 && i !== num) {
+            result = false;
+        }
+        return result;
+    }
+};
+alert(prime(6));
+//Tweak to allow for 1 to be entered, otherwise it returns undefined
