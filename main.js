@@ -64,3 +64,33 @@ var prime = function (num) {
 };
 alert(prime(6));
 //Tweak to allow for 1 to be entered, otherwise it returns undefined
+
+var ABCheck = function(str){
+    
+}
+
+
+//Fibonacci number finder
+
+var fibonacciFinder = function(num){
+    var fibArray = [0,1];
+    var result = true;
+    for(var i = 0; i < 99; i++){
+        fibArray.push(fibArray[fibArray.length - 1] + fibArray[fibArray.length - 2]);
+    };
+    if(fibArray.indexOf(num) === -1){
+        result = false;
+    };
+    return result;
+}
+console.log(fibonacciFinder(6765));
+
+// Slightly more concise code for same result:
+var fibonacciFinder = function(num){
+    var fibArray = [0,1];
+    for(var i = 0; i < 99; i++){
+        fibArray.push(fibArray[fibArray.length - 1] + fibArray[fibArray.length - 2]);
+    };
+    return fibArray.indexOf(num) !== -1;
+}
+console.log(fibonacciFinder(6765));
