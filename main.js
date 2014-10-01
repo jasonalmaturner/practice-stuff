@@ -94,3 +94,12 @@ var fibonacciFinder = function(num){
     return fibArray.indexOf(num) !== -1;
 }
 console.log(fibonacciFinder(6765));
+
+var fibonacciFinder2 = function(num){
+    var fibArray = [0,1];
+    for(var i = 0; i < num - 2; i++){
+        fibArray.push(fibArray[fibArray.length - 1] + fibArray[fibArray.length - 2]);
+    };
+    return fibArray[num - 1];
+}
+console.log(fibonacciFinder2(4));
