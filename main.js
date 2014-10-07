@@ -103,3 +103,46 @@ var fibonacciFinder2 = function(num){
     return fibArray[num - 1];
 }
 console.log(fibonacciFinder2(4));
+
+
+//This didn't work.
+var evenOccurence = function(arr){
+    debugger;
+    var even = [];
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] % 2 === 0){
+            even.push(arr[i]);
+        }
+    }
+    var occurence = [];
+    for(var i = 0; i < even.length; i++){
+        for(var j = 0; j < even.length; j++){
+            if(even.indexOf(even[i]) === even.indexOf(even[j]))
+                occurence.push(even[i]);
+        }
+    }
+    for(var i = 0; i < occurence.length; i++){
+        if(occurence[i] === occurence[i + 1] !== occurence[i + 2]){
+            return occurence[i];
+        } else {
+            return null;
+        }
+    }
+};
+                
+
+console.log(evenOccurence([1,6,2,4,4,5,6,8,9,6]));
+
+var parenBit = function (str) {
+    var firstParen = str.indexOf('(');
+    var secondParen = str.indexOf(')');
+    if (firstParen === -1) {
+        return "No opening parenthesis";
+    } else if (secondParen === -1) {
+        return "No closing parenthesis";
+    } else {
+        return str.slice(firstParen, secondParen + 1);
+    }
+};
+
+alert(parenBit("xyz(abc)123"));
