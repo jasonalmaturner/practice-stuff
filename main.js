@@ -264,3 +264,61 @@ var totalTaxa = function(arr){
 };
 
 console.log(totalTaxa(animals));
+
+
+//Given the array, create a function that determines whether the array contains two numbers whose sume is equal to 0;
+
+var numbers = [6, -2, 5, 3, 9, -5, -1, 0, -4, 4];
+
+var sumZero = function (arr) {
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr.length; j++) {
+            if (arr[i] + arr[j] === 0) {
+                console.log(arr[i] + ' and ' + arr[j]);
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    }
+};
+
+console.log(sumZero(numbers));
+
+var numbers = [6, -2, 5, 3, 9, -5, -1, 0, -4, 4];
+
+var sumZero = function (arr) {
+    var response = false;
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] === 0) {
+                console.log(arr[i], arr[j]);
+                response = true;
+            }
+        }
+    }
+    return response;
+};
+
+console.log(sumZero(numbers));
+
+
+var numbers = [6, -2, 5, 3, 9, -5, -1, 0, -4, 4];
+
+var sumZero = function (arr) {
+    var response = false;
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+            for (var k = i + j + 1; k < arr.length; k++) {
+                if (arr[i] + arr[j] + arr[k] === 0) {
+                    console.log(arr[i], arr[j], arr[k]);
+                    response = true;
+                }
+            }
+        }
+    }
+    return response;
+};
+
+console.log(sumZero(numbers));
