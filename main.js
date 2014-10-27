@@ -322,3 +322,38 @@ var sumZero = function (arr) {
 };
 
 console.log(sumZero(numbers));
+
+//given the following array, randomize it.
+var students = ["PJ", "Brock", "Erin", "Daniel", "Jacob", "Aaron", "Jason", "Schuyler", "Kory", "Corey", "Zac", "Jonathan", "Skyler", "Jess", "Krissy", "Mark", "David", "Bryson", "Larry", "Fernanda", "Jennifer"];
+
+var randomizeStudents = function(arr){
+    var randomArray = [];
+    while(arr.length > 0) {
+        var i = Math.floor(Math.random()*arr.length);
+        randomArray.push(arr.splice(i, 1));
+    }
+    return randomArray;
+}
+
+var randomStudents = function(arr){
+    var randomArray = [];
+    for(var i = randomNum; i < arr.length; i++){
+        var randomNum = Math.floor(Math.random()*arr.length);
+        randomArray.push(arr.splice(i, 1));
+    }
+}
+
+//write a function that takes a string as an argument and determines whether or not the given string is a palindrome.
+//example of a palindrome: Acrobats stab orca
+
+var isPalindrome = function(str){
+    if(str.split('').reverse().join('').toLowerCase().replace(/\W+/g, '') === str.toLowerCase().replace(/\W/g, '')){
+        return true;
+    } else {
+        return false;
+    }
+};
+
+console.log(isPalindrome("Anna"));
+console.log(isPalindrome("Hello World"));
+console.log(isPalindrome("Amen icy cinema"));
