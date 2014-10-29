@@ -411,3 +411,29 @@ var objectifier = function(arr, str) {
 }
 
 // Review bracket notation versus dot notation
+
+// I completed this function incorrectly
+var recursion = function(callBack){
+  var newFunction = function(callBack, n){
+    newFunction();
+    for(var i = 0; i <= n; i++){
+      callBack();
+    }
+  }
+  return newFunction;
+}
+
+var newFn = originalFunction(function(){
+  alert('Woooo');
+}, 3);
+
+var originalFunction = function(fn, n){
+  return function(){
+    if(n > 0){
+      fn();
+      n--;
+    } else {
+      console.log('Done');      
+    }
+  }
+}
