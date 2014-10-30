@@ -437,3 +437,27 @@ var originalFunction = function(fn, n){
     }
   }
 }
+
+var longest = function(str){
+  var arr = str.toLowerCase().split(' ');
+  var longestArray = [arr[0]];
+  for(var i = 1; i < arr.length; i++){
+    if(arr[i].length > arr[i - 1].length && arr[i] !== arr[i - 1]){
+      longestArray.splice(longestArray.length - 1, 1, arr[i]);
+    } else if(arr[i].length === arr[i - 1].length && arr[i] !== arr[i - 1]) {
+      longestArray.push(arr[i]);
+    }
+  }
+  if(longestArray[longestArray.length - 1].length > longestArray[0].length){
+    longestArray.splice(0,1);
+  }
+  if(longestArray.length === 1) {
+    return longestArray[0];
+  } else {
+    return longestArray;
+  }
+}
+
+console.log(longest("You are just an old antidisestablishmentarian"));
+console.log(longest("I gave a present to my parents"));
+console.log(longest("Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo"));
