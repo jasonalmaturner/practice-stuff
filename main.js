@@ -461,3 +461,49 @@ var longest = function(str){
 console.log(longest("You are just an old antidisestablishmentarian"));
 console.log(longest("I gave a present to my parents"));
 console.log(longest("Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo"));
+console.log(longest("I gave a present to my present"));
+
+// Why doesn't this one work?
+var replace = function(str){
+  var arr = str.split('');
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] === "x"){
+      arr.splice(arr[i], 1, "y");
+    }
+  }
+  return arr.join('');
+}
+console.log(replace('xxxaaalyllx'));
+// This one works
+var replace = function(str){
+  var arr = str.split('');
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] === "x"){
+      arr[i] = "y";
+    }
+  }
+  return arr.join('');
+}
+console.log(replace('xxxaaalyllx'));
+
+
+//create a function that takes an array of strings as an argument and returns an
+ // object that contains the strings converted to base 64 as keys and the length 
+ // of the original strings as values. Each string should only be encoded once!
+
+var strings = ["Like a Rolling Stone", "Satisfaction", "Imagine", "What's Going On", "Respect", "Good Vibrations", "Johnny B. Goode", "Hey Jude", "Smells Like Teen Spirit", "What'd I Say", "Satisfaction", "Imagine", "Imagine", "Good Vibrations", "Hey Jude"];
+
+//code here
+var output = function(arr){
+  var encodeObj = {};
+  for(var i = 0; i < arr.length; i++){
+    var encoded_string = btoa(arr[i]);
+    if(!encodeObj[encoded_string]){
+      encodeObj[encoded_string] = arr[i].length;
+    }
+  }
+  return encodeObj;
+}
+
+//should output
+//{"TGlrZSBhIFJvbGxpbmcgU3RvbmU=":20 ... }
