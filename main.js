@@ -507,3 +507,17 @@ var output = function(arr){
 
 //should output
 //{"TGlrZSBhIFJvbGxpbmcgU3RvbmU=":20 ... }
+
+
+// This toy problem stumped me, but it works. I need to review closures.
+var sum = function(x, y){
+  if(!y){
+    return function(z){
+      return x + z;
+    }
+  } else {
+    return x + y;
+  }
+}
+sum(2,3)
+sum(2)(3)
