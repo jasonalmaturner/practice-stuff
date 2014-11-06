@@ -521,3 +521,19 @@ var sum = function(x, y){
 }
 sum(2,3)
 sum(2)(3)
+
+var christmasTree = function(n){
+    if(n < 1){
+        return 0;
+    }
+    return n + christmasTree(n - 1)
+}
+christmasTree(5)
+
+var triangle = function(num){
+    var total = 0;
+    for(var i = 1; i <=num; i++){
+        total += i
+    }
+    return total;
+}
