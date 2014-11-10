@@ -537,3 +537,96 @@ var triangle = function(num){
     }
     return total;
 }
+
+/*
+Write a function that takes in a string and can evaulate each
+type of brackets to determine if there are matching pairs.
+Return true if all opening brackets have a closing or return false if they do not.
+*/
+
+    // var openingRegEx = /[[({]/g;
+    // var closingRegEx = /[)})]]/g;
+
+var evaluateBrackets = function(str){
+    var curlyOpen = [];
+    var parenOpen = [];
+    var straightOpen = [];
+    var curlyClose = [];
+    var parenClose = [];
+    var straightClose = [];
+    for(var i = 0; i < str.length; i++){
+        if(str[i] === '{'){
+            curlyOpen.push(str[i]);
+        } else if(str[i] === '('){
+            parenOpen.push(str[i]);
+        } else if(str[i] === '['){
+            straightOpen.push(str[i])
+        } else if(str[i] === '}'){
+            curlyClose.push(str[i]);
+        } else if(str[i] === ')'){
+            parenClose.push(str[i]);
+        } else if(str[i] === ']'){
+            straightClose.push(str[i]);
+        }
+    }
+    if(curlyOpen.length === curlyClose.length && parenOpen.length === parenClose.length && straightOpen.length === straightClose.length){
+        return true;
+    } else return false;
+}
+var strPass = '({}[]{[]})';
+var strFail = '({{{]}})';
+evaluateBrackets(strPass);
+evaluateBrackets(strFail);
+
+var evaluateBracketsDos = function(str){
+    debugger;
+    var openingRegEx = /[{*[*(*]/g;
+    var closingRegEx = /[^{*[*(*]/g;
+    var openingArray = str.match(openingRegEx);
+    var closingArray = str.match(closingRegEx);
+    if(openingArray.length === closingArray.length){
+        return true;
+    }
+    else return false
+}
+var strPass = '({}[]{[]})';
+var strFail = '({{{]}})';
+evaluateBracketsDos(strFail);
+
+var evaluateBracketsTres = function(str){
+    debugger;
+    var openingRegEx = /[{*[*(*]/g;
+    var closingRegEx = /[^{*[*(*]/g;
+    var openingArray = openingRegEx.exec(str);
+    var closingArray = closingRegEx.exec(str);
+    if(openingArray.length === closingArray.length){
+        return true;
+    }
+    else return false
+}
+var strPass = '({}[]{[]})';
+var strFail = '({{{]}})';
+evaluateBracketsTres(strFail);
+
+var clockAngle = function(time){
+    var timeArray = time.split(":");
+    var minuteAngle = timeArray[1] * 6;
+    var totalAngle;
+    if(timeArray[0] === "12"){
+        hourAngle = 0 + ((timeArray[1]/60) * 30);
+    } else {
+        hourAngle = (timeArray[0] * 30) + ((timeArray[1]/60) * 30);
+    }
+    if(minuteAngle > hourAngle){
+        totalAngle = minuteAngle - hourAngle;
+    } else {
+        totalAngle = hourAngle - minuteAngle;
+    }
+    if(totalAngle === 360){
+        return 0;
+    } else {
+    return totalAngle;
+    }
+}
+console.log(clockAngle("12:30"))
+// each minute is 6 degrees.
