@@ -630,3 +630,21 @@ var clockAngle = function(time){
 }
 console.log(clockAngle("12:30"))
 // each minute is 6 degrees.
+
+var minusTen = function(arr){
+    for(var i = 0; i < arr.length; i++){
+        arr[i] = arr[i] - 10;
+    }
+};
+var evens = function(arr, func){
+    var newArr = [];
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] % 2 === 0){
+            newArr.push(arr[i]);
+        }
+    }
+    func(newArr);
+    return newArr;
+}
+var arr = [52,67,45,36,29,87,65,47,28,44,78];
+evens(arr, minusTen);
