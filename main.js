@@ -648,3 +648,74 @@ var evens = function(arr, func){
 }
 var arr = [52,67,45,36,29,87,65,47,28,44,78];
 evens(arr, minusTen);
+
+
+// I can't figure this one out.
+// var counter = count();
+// counter(); 1
+// counter(); 2
+// counter(); 3
+// counter(); 4
+// counter(); 5
+
+// counter(); 15
+// counter(); 16
+// counter(); 17
+// counter(); 18
+// counter(); 19
+// counter(); 20
+
+// counter(); 30
+// counter(); 31
+// counter(); 32 ...etc
+
+var count = function(){
+    var counter = 0;
+    var notYet;
+    return function(){
+        if(counter % 5 === 0 && !notYet && counter !== 0){
+            counter += 10;
+            notYet = true;
+        } else {
+            notYet = false;
+            counter += 1;
+        }
+        return counter;
+    }
+}
+var counter = count();
+
+// Write a function that console.logs numbers from 1 to 100.
+// But for multiples of three, print "Fizz" instead of the number
+// and for multiples of five print "Buzz." For numbers that are
+// multiples of both three and five, print "FizzBuzz."
+
+var FizzBuzz = function(){
+    for(var i = 1; i < 101; i++){
+        if(i % 3 === 0 && i % (3 * 5) !== 0){
+            console.log('Fizz');
+        } else if(i % 5 === 0 && i % (3 * 5) !== 0){
+            console.log('Buzz');
+        } else if(i % (3 * 5) === 0){
+            console.log('FizzBuzz');
+        } else {
+            console.log(i);
+        };
+    };
+};
+FizzBuzz();
+
+var fizzBuzzEnhanced = function(){
+    for(var i = 1; i < 101; i++){
+        if(i % 3 === 0 && i % 5 === 0){
+            console.log('FizzBuzz');
+        } else if(i % 5 === 0){
+            console.log('Buzz');
+        } else if(i % 3 === 0){
+            console.log('Fizz');
+        } else {
+            console.log(i);
+        };
+    };
+};
+fizzBuzzEnhanced();
