@@ -719,3 +719,19 @@ var fizzBuzzEnhanced = function(){
     };
 };
 fizzBuzzEnhanced();
+
+//How would you implement a queue in Javascript? In Computer Science, a queue has a very distinct meaning and behavior. See a description of a queue here: http://en.wikipedia.org/wiki/Queue_(abstract_data_type)
+//queues represent a FIFO (first in, first out) policy with a linear data structure
+//what are some real world examples of a queue in Javascript?
+//which methods would be specific to a queue?
+
+// Use an array - unshift and pop. Or use shift and push. I guess it depends on what direction you want to go.
+// AJAX? Inventory management, invoices/service (like a DMV, or pre-ordering an item), 
+
+//How would you implement a stack in Javascript? Stack: http://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+//stacks represent a LIFO (last in, first out) policy
+//what are some real world examples of a stack in Javascript?
+//which methods are specific to a stack?
+
+// Same. Use an array, but use shift and unshift. Or, use push and pop. Actually, using push and pop makes a little more sense.
+// Undo list. For example, undo functions in editing a document recalls data like a stack.
