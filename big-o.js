@@ -1,6 +1,6 @@
 var array = []
 var newArr = function(){
-	for(var i = 0; i < 100000; i++){
+	for(var i = 0; i < 300000; i++){
 		randomNum = Math.floor(Math.random() * 1000);
 		array.push(randomNum);
 	};

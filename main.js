@@ -766,3 +766,32 @@ var obj = {
 
 obj.add(1) // 3
 obj.multiply(3) // 6
+
+var myArray = ['J','a','s','o','n'];
+var nums = [1,2,3,4,5,6,7];
+
+myArray.unsplit(''); // 'Jason'
+nums.unsplit('*'); // '1*2*3*4*5*6*7'
+var myArray = ['J','a','s','o','n'];
+var nums = [1,2,3,4,5,6,7];
+Array.prototype.unsplit = function(joinBy){
+    return this.join(joinBy);
+}
+myArray.unsplit('');
+nums.unsplit('*');
+
+var evaluateBracketsReattempt = function(str){
+    var openingCurlyRegEx = /[{*(*]/g,
+        openingSquareRegEx = /[[*]/g,
+        openingParenRegEx = /[(*]/g,
+        closingCurlyRegEx = /[}*]/g;
+    var openingArray = str.match(openingRegEx);
+    var closingArray = str.match(closingRegEx);
+    if(openingArray.length === closingArray.length){
+        return true;
+    }
+    else return false
+}
+var strPass = '({}[]{[]})';
+var strFail = '({{{]}})';
+evaluateBracketsDos(strFail);
