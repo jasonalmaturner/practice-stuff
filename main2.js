@@ -26,3 +26,25 @@ var finder2 = function(string, array) {
 		return false;
 	}
 }
+
+var first = ['Tyler', 'Ean', 'Cahlan'];
+var last = ['McGinnis', 'Platter', 'Sharp'];
+
+function combinator(firstName, lastName) {
+	var newArray = [];
+	var tempArray = [];
+	for(var i = 0; i < firstName.length; i++) {
+		tempArray.push(first[i], last[i]);
+		newArray.push(tempArray.join(' '));
+		tempArray = [];
+	}
+	return newArray;
+}
+
+function combinator2(first, last) {
+	var newArray = [];
+	for(var i = 0; i < first.length; i++) {
+		newArray.push(first[i] + ' ' + last[i]);
+	}
+	return newArray;
+}
