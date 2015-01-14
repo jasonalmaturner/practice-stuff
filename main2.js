@@ -48,3 +48,15 @@ function combinator2(first, last) {
 	}
 	return newArray;
 }
+
+
+var sum = function(array, cb) {
+	var total = 0;
+	for(var i = 0; i < array.length; i++) {
+		total += array[i];
+	};
+	cb(total);
+}
+sum([1,4,3,5,2,8], function(total) {
+	console.log('The total sum of the array is ' + total);
+});
