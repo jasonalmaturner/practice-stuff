@@ -60,3 +60,33 @@ var sum = function(array, cb) {
 sum([1,4,3,5,2,8], function(total) {
 	console.log('The total sum of the array is ' + total);
 });
+
+function reverse (string) {
+	var newString = "";
+	for(var i = string.length - 1; i >= 0; i--) {
+		newString += string[i];
+	}
+	return newString;
+}
+
+function factorial1 (n) {
+	for(var i = n; i > 0; i--){
+		console.log(i);
+	}
+}
+
+function factorial2 (n) {
+	var answer = n;
+	for(var i = n - 1; i > 0; i--){
+		answer = answer + ' * ' + i;
+	}
+	return answer;
+};
+
+function factorial3 (n) {
+	var answer = n;
+	for(var i = n - 1; i > 0; i--){
+		answer = answer * i;
+	}
+	return answer;
+}
