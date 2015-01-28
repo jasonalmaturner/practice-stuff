@@ -90,3 +90,108 @@ function factorial3 (n) {
 	}
 	return answer;
 }
+
+var simpleSymbols = function(str) {
+	var array = str.split('');
+	for(var i < array.length; i++) {
+		
+	}
+}
+
+// Given an arbitrary input string, return the first non-repeated character in the string. For example:
+// firstNonRepeatedCharacter(‘ABA’); // => ‘B’
+// firstNonRepeatedCharacter(‘AABCABD’); // => ‘C’
+
+var firstNon = function(str) {
+	var hash = {}
+	for(var i = 0; i < str.length; i++) {
+		hash[str[i]] = 0;
+		console.log(hash);
+	}
+}
+
+var firstNon = function(str) {
+	var array = [];
+	for(var i = 0; i < str.length; i++) {
+		if(array.indexOf(str[i]) === -1) {
+			array.push(str[i]);
+		};
+	};
+}
+
+var firstNon = function(str) {
+	var array = [];
+	for(var i = 0; i < str.length; i++){
+		array.push(0);
+	}
+	for(var i = 0; i < str.length; i++){
+		if()
+	}
+}
+
+var firstNon = function(str) {
+	for(var i = 0; i < str.length; i++) {
+		if(str.indexOf(str[i]) !== i) {
+			return str[i];
+		}
+	}	
+}
+
+var diff = function(num1, num2){
+	var newArray = [];
+	for(var i = num1; i < num2 + 1; i++){
+		newArray.push(i);
+	};
+	return newArray;
+}
+
+var diff = function(num1, num2){
+	for(var i = num1; i < num2 + 1; i++) {
+		console.log(i)
+	}
+}
+
+// Write a function called ABCheck that takes a string parameter and return the string true 
+// if the characters a and b are separated by exactly 3 places anywhere in the string at least once 
+// (ie. "lane borrowed" would result in true because there is exactly three characters between
+ // a and b). Otherwise return the string false. 
+
+function ABCheck(string){
+	var newArray = string.toLowerCase().split('');
+	console.log(newArray);
+	var flag = false;
+	for(var i = 0; i < newArray.length; i++) {
+		if(newArray[i] === 'a' && newArray[i + 4] === 'b') {
+			flag = true;
+		} else if (newArray[i] === 'a' && newArray[i - 4] === 'b') {
+			flag = true;
+		} else if (newArray[i] === 'b' && newArray[i + 4] === 'a') {
+			flag = true;
+		} else if (newArray[i] === 'b' && newArray[i - 4] === 'a') {
+			flag = true;
+		}
+	}
+	return flag;
+}
+
+
+
+// Write a function that generates an array of integers of 
+// the Fibonacci sequence, up to i = 100. The Fibonacci sequence
+// is defined by: Fn = Fn-1 + Fn-2, which means to find Fn you 
+// add the previous two numbers up. The first two numbers in
+// the sequence are 0 and 1. Write a function to check if a given number
+// is in the Fibonacci sequence, return "yes" if it is,
+// if not return the string "no."
+
+function fib(num){
+	var fbnArray = [0,1];
+	for(var i = 0; i < 99; i++){
+		fbnArray.push(fbnArray[fbnArray.length - 1] + fbnArray[fbnArray.length - 2]);
+	};
+	console.log(fbnArray)
+	if(fbnArray.indexOf(num) === -1){
+		return false;
+	}
+	return true;
+}

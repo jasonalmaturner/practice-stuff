@@ -30,16 +30,65 @@ alert(factorial(5));*/
 //This above function needs tweeked to work
 
 var SimpleSymbols = function(str){
-    var re = /\+\w\+/i;
+    var re = /\+\w\+/g;
+    var re2 = /\+\w/g;
+    var re3 = /\w\+/g;
     var test = true;
     if (str.search(re) === -1){
+        test = false;
+    } else if (str.search(re2)){
+        test = false;
+    } else if (str.search(re3)){
         test = false;
     }
     return test;
 };
 
 z = "+d+++====+==+D+==";
-alert(SimpleSymbols(z));
+SimpleSymbols(z);
+
+var simpleSymbols = function(str) {
+    re1 = /=[a-z-A]/;
+    re2 = /[a-zA-Z]=/;
+    re3 = /^[a-zA-Z]/;
+    re4 = /[a-zA-Z]$/;
+    if(str.search(re1) !== -1 || str.search(re2) !== -1 || str.search(re3) !== -1 || str.search(re4) !== -1){
+        return false;
+    } else {
+        return true;
+    }
+}
+
+var isLetter = function (char){
+    return char.length === 1 && char.match(/[a-zA-Z]/i);
+}
+
+var simpleSymbols = function (str){
+    var flag = false;
+    for(var i = 1; i < str.length; i++){
+        if(isLetter(str[i])){
+            if(str[i-1] === '+' && str[i+1] === '+'){
+                flag = true;
+            } else {
+                return false;
+            }
+        }
+    }
+    return flag;
+}
+var simpleSymbols = function(str){
+    var letters = 'abcdefghijklmnopqrstuvwxyz';
+    var hash = {};
+    for(var i = 0; i < letters.length; i++){
+        hash[letters[i]] = true;
+    }
+    for(var i = 0; i < str.length; i++){
+        if(hash[str[i]] && (str[i-1] !== '+' || str[i+1] !== '+')){
+        return false;
+        }
+    }
+    return true;
+}
 
 //This function returns if any +"letter"+ is true. I need it to return if any letter is not surrounded by +
 
