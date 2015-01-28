@@ -195,3 +195,24 @@ function fib(num){
 	}
 	return true;
 }
+
+function onlyEven (arr) {
+	var hash = {};
+	for(var i = 0; i < arr.length; i++){
+		if(hash[arr[i]]){
+			hash[arr[i]]++
+		} else {
+			hash[arr[i]] = 1;
+		}
+	}
+	for(var key in hash){
+		if(hash[key] % 2 === 0){
+			return key;
+		}
+	}
+	return null;
+}
+
+var nums = [1,6,2,4,4,5,6,8,9,6];
+var nums2 = [1,8,6,6,8,7,6,7];
+var nums3 = [1,2,3,4,5];
