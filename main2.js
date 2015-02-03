@@ -214,5 +214,47 @@ function onlyEven (arr) {
 }
 
 var nums = [1,6,2,4,4,5,6,8,9,6];
+
+
 var nums2 = [1,8,6,6,8,7,6,7];
 var nums3 = [1,2,3,4,5];
+
+function deleter (array){
+var hash = {};
+  for(var i = 0; i < array.length; i++){
+    if(hash[array[i]]){
+      array.splice(i,1);
+    } else {
+      hash[array[i]] = true;
+    };
+  };
+};
+
+function fibRec(n){
+	var fbnArray = [0,1];
+	for(var i = 0; i < n; i++){
+		fbnArray.push(fbnArray[fbnArray.length - 1] + fbnArray[fbnArray.length - 2]);
+	};
+	return fbnArray[n - 1];
+};
+
+function fibRec2(n){
+	debugger;
+	if(n === 1){
+		return 0;
+	} else if(n === 2){
+		return 1;
+	} else {
+		return fibRec2(n - 1) + fibRec2(n - 2);
+	};
+};
+
+function replace(string, letter1, letter2) {
+	var array = string.toLowerCase().split('');
+	for(var i = 0; i < array.length; i++) {
+		if(array[i] === letter1){
+			array[i] = letter2;
+		}
+	}
+	return array.join('')
+}
