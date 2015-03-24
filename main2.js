@@ -93,7 +93,7 @@ function factorial3 (n) {
 
 var simpleSymbols = function(str) {
 	var array = str.split('');
-	for(var i < array.length; i++) {
+	for(var i < array.length; i++) {https://github.com/jasonalmaturner/toy-problems
 		
 	}
 }
@@ -258,3 +258,19 @@ function replace(string, letter1, letter2) {
 	}
 	return array.join('')
 }
+
+// function palindrome (str) {
+// 	var newStr = str.toLowerCase().split(' ').join('')
+// 	var firstHalf = newStr.split('').splice(newStr.length/2);
+// 	newStr.split('').splice(newStr.length/2);
+// 	firstHalf.reverse()
+// 	firstHalf.join('')
+// 	console.log(newStr
+// )	console.log(firstHalf)
+
+// 	if(firstHalf === str) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
