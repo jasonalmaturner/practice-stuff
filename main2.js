@@ -1,12 +1,14 @@
 // Work on this toy problem until 9:20ish. We'll review a couple of solutions until 9:30,
 // and then work on the project review until 10:00
 
-// “Write a function called finder that accepts two parameters, 
-// the first one is a string and the second is an array. 
+// “Write a function called finder that accepts two parameters,
+// the first one is a string and the second is an array.
 // Have your function return true if the string is found in the array and false if it is not”
 // var nums = [“hello”, “javascript”, “awesome”];
 // finder(“javascript”, nums); //true
 // finder(“lame”, nums); //false
+
+
 
 var pets = ['dog', 'cat', 'red breasted merganser', 'duck billed platypus', 'emu', 'hedgehog'];
 
@@ -94,7 +96,7 @@ function factorial3 (n) {
 var simpleSymbols = function(str) {
 	var array = str.split('');
 	for(var i < array.length; i++) {https://github.com/jasonalmaturner/toy-problems
-		
+
 	}
 }
 
@@ -134,7 +136,7 @@ var firstNon = function(str) {
 		if(str.indexOf(str[i]) !== i) {
 			return str[i];
 		}
-	}	
+	}
 }
 
 var diff = function(num1, num2){
@@ -151,10 +153,10 @@ var diff = function(num1, num2){
 	}
 }
 
-// Write a function called ABCheck that takes a string parameter and return the string true 
-// if the characters a and b are separated by exactly 3 places anywhere in the string at least once 
+// Write a function called ABCheck that takes a string parameter and return the string true
+// if the characters a and b are separated by exactly 3 places anywhere in the string at least once
 // (ie. "lane borrowed" would result in true because there is exactly three characters between
- // a and b). Otherwise return the string false. 
+ // a and b). Otherwise return the string false.
 
 function ABCheck(string){
 	var newArray = string.toLowerCase().split('');
@@ -176,9 +178,9 @@ function ABCheck(string){
 
 
 
-// Write a function that generates an array of integers of 
+// Write a function that generates an array of integers of
 // the Fibonacci sequence, up to i = 100. The Fibonacci sequence
-// is defined by: Fn = Fn-1 + Fn-2, which means to find Fn you 
+// is defined by: Fn = Fn-1 + Fn-2, which means to find Fn you
 // add the previous two numbers up. The first two numbers in
 // the sequence are 0 and 1. Write a function to check if a given number
 // is in the Fibonacci sequence, return "yes" if it is,
